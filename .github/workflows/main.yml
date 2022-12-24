@@ -1,10 +1,13 @@
 on: [push]
 
 jobs:
-  hello_world:
+  action:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: ./
         with:
           who-to-greet: koki
+
+  reusable:
+    uses: ./.github/workflows/_reusable.yml
